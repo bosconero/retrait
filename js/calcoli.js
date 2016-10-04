@@ -1,6 +1,6 @@
 function controllo() {
 if(document.getElementById('rck').value==''){
-alert("ATTENZIONE:"+"\n"+"\n"+ "Inserez la resistance du beton en N/mm2") ;
+alert("ATTENTION:"+"\n"+"\n"+ "Inserez la resistance cubique du beton en N/cm2") ;
 document.getElementById('rck').focus();
 } else{
 controllo5()}
@@ -9,28 +9,28 @@ function controllo5(){
 var cespo=document.getElementById('classesp').value;
 var rck=document.getElementById('rck').value;
 if(cespo=='XC1' && rck < 30){
-alert("ATTENZIONE:"+"\n"+"\n"+ " Resistance infèrieur a 30 N/mm2, classe de résistance minimal admis pour XC1");
+alert("ATTENTION:"+"\n"+"\n"+ " Resistance infèrieur a 30 N/cm2, classe de résistance minimal admis pour XC1");
 document.getElementById('rck').value='';
 document.getElementById('rck').focus();
 
 }else if (cespo=='XC2' && rck < 30){
-alert("ATTENZIONE:"+"\n"+"\n"+ " Resistance infèrieur a 30 N/mm2, classe de résistance minimal admis pour XC2");
+alert("ATTENTION:"+"\n"+"\n"+ " Resistance infèrieur a 30 N/cm2, classe de résistance minimal admis pour XC2");
 document.getElementById('rck').value='';
 document.getElementById('rck').focus();
 }else if (cespo=='XC3' && rck < 35) {
-alert("ATTENZIONE: "+"\n"+"\n"+ "Resistance infèrieur a 35 N/mm2, classe de résistance minimal admis pour");
+alert("ATTENTION: "+"\n"+"\n"+ "Resistance infèrieur a 35 N/cm2, classe de résistance minimal admis pour");
 document.getElementById('rck').value='';
 document.getElementById('rck').focus();
 }else if(cespo=='XC4' && rck < 40){
-alert("ATTENZIONE:"+"\n"+"\n"+ " Resistance infèrieur a 40 N/mm2, classe de résistance minimal admis pour XC4");
+alert("ATTENTION:"+"\n"+"\n"+ " Resistance infèrieur a 40 N/cm2, classe de résistance minimal admis pour XC4");
 document.getElementById('rck').value='';
 document.getElementById('rck').focus();
 }else if(cespo=='XF3' && rck < 30){
-alert("ATTENZIONE:"+"\n"+"\n"+ " Resistance infèrieur a 30 N/mm2, classe de résistance minimal admis pour XF3");
+alert("ATTENTION:"+"\n"+"\n"+ " Resistance infèrieur a 30 N/cm2, classe de résistance minimal admis pour XF3");
 document.getElementById('rck').value='';
 document.getElementById('rck').focus();
 }else if (cespo=='XF4' && rck < 35){
-alert("ATTENZIONE:"+"\n"+"\n"+ " Resistance infèrieur a 35 N/mm2, classe de résistance minimal admis pour XF4");
+alert("ATTENTION:"+"\n"+"\n"+ " Resistance infèrieur a 35 N/cm2, classe de résistance minimal admis pour XF4");
 document.getElementById('rck').value='';
 document.getElementById('rck').focus();
 } 
@@ -55,7 +55,7 @@ controllo3()}
 }
 function controllo3(){
 if(document.getElementById('spesspav').value==''){
-alert("Inserez l'epaisseur du plancher ") ;
+alert("Inserez l'epaisseur de la dalle ") ;
 document.getElementById('spesspav').focus();
 } else{
 ritiro()}
@@ -71,35 +71,35 @@ var spess=document.getElementById('spesspav').value;
 var cespo=document.getElementById('classesp').value;
 var tgetto=document.getElementById('tipogetto').value;
 if(document.getElementById('barriera').checked){
-var strato="si";
+var strato="oui";
 }else{
 var strato="no";
 }
 
 
-if (tgetto=="diretto" && cespo=='XC1'){
+if (tgetto=="direct" && cespo=='XC1'){
 var srit=700;}
-if (tgetto=="diretto" && cespo=='XC2'){
+if (tgetto=="direct" && cespo=='XC2'){
 srit=700;}
-if (tgetto=="diretto" && cespo=='XC3'){
+if (tgetto=="direct" && cespo=='XC3'){
 srit=650;}
-if (tgetto=="diretto" && cespo=='XC4'){
+if (tgetto=="direct" && cespo=='XC4'){
 srit=600;}
-if (tgetto=="diretto" && cespo=='XF3'){
+if (tgetto=="direct" && cespo=='XF3'){
 srit=600;}
-if (tgetto=="diretto" && cespo=='XF4'){
+if (tgetto=="direct" && cespo=='XF4'){
 srit=550;}
-if (tgetto=="pompa" && cespo=='XC1'){
+if (tgetto=="avec pompe" && cespo=='XC1'){
 srit=800;}
-if (tgetto=="pompa" && cespo=='XC2'){
+if (tgetto=="avec pompe" && cespo=='XC2'){
 srit=800;}
-if (tgetto=="pompa" && cespo=='XC3'){
+if (tgetto=="avec pompe" && cespo=='XC3'){
 srit=750;}
-if (tgetto=="pompa" && cespo=='XC4'){
+if (tgetto=="avec pompe" && cespo=='XC4'){
 srit=700;}
-if (tgetto=="pompa" && cespo=='XF3'){
+if (tgetto=="avec pompe" && cespo=='XF3'){
 srit=700;}
-if (tgetto=="pompa" && cespo=='XF4'){
+if (tgetto=="avec pompe" && cespo=='XF4'){
 srit=650;}
 
 if(umrel<40){
@@ -136,7 +136,7 @@ var fitt=0.45-((spep-40)*0.005)
 
 var ritirolastrax=((fitt*umi*srit)/1000)*distcont;
 var ritirolastray=Math.round(ritirolastrax*100)/100;
-if (strato=="si"){
+if (strato=="oui"){
 var ritirostrato=ritirolastray*12/100;
 }else{
 ritirostrato=0;}
@@ -147,7 +147,7 @@ var boxalert=document.getElementById('boxalert');
 boxalert.innerHTML="Le retrait theorique du béton jeune pour les joints de retrait scie tous les  <span style='font-weight:bold;color:#ff2200;'>"+distcont+" ml </span> il sera de <br /> <span style='font:bold 20px arial;color:#ff2200;display:block;width:100%;text-align:center;'>"+ritirolastra+" mm </span>";
 var alertd=document.getElementById('alert2');
 if (ritirolastra>1.7){
-alert("Ritiro teorico pari a "+ritirolastra+"\n"+"\n"+"RECALCULER LA DISTANCE DES JOINTS DE RETRAIT JUSQU'AU OBTENIR UN RETRAIT DE NE PAS PLUS DE 1.7 mm");
+alert("Les retrait theorique est de "+ritirolastra+"\n"+"\n"+"RECALCULER LA DISTANCE DES JOINTS DE RETRAIT JUSQU'AU OBTENIR UN RETRAIT DE NE PAS PLUS DE 1.7 mm");
 fineintro();
 document.getElementById('digiucont').value='';
 document.getElementById('digiucont').focus();
@@ -193,13 +193,13 @@ var getto=document.getElementById('tipogetto').value;
 var cls=document.getElementById('rck').value;
 var spessore=document.getElementById('spesspav').value;
 if(document.getElementById('barriera').checked){
-var strimp="si";
+var strimp="oui";
 }else{
 var strimp="no";
 }
 
 
-var mess="DONN&Eacute;E DE CALCUL %0d%0a -------------------------%0d%0a%0d%0a Classe d'exposition du beton: "+pac+"%0d%0aResistance du beton    : "+cls+" N/mmq%0d%0aEpaisseur du plancher   : "+spessore+" cm%0d%0aDistance entre les joints de retrait: "+contr+" ml%0d%0aCoulage             : "+getto+"%0d%0asubstrat imperméable :"+strimp+"%0d%0a%0d%0a%0d%0aRESULTATS%0d%0a----------------------%0d%0aIl ritiro teorico del calcestruzzo giovane in fase plastica e pari a "+ritirolastra+" mm.;%0d%0a" ;
+var mess="DONN&Eacute;E DE CALCUL %0d%0a -------------------------%0d%0a%0d%0a Classe d'exposition du beton: "+pac+"%0d%0aResistance du beton    : "+cls+" N/mmq%0d%0aEpaisseur du plancher   : "+spessore+" cm%0d%0aDistance entre les joints de retrait: "+contr+" ml%0d%0aCoulage             : "+getto+"%0d%0asubstrat imperméable :"+strimp+"%0d%0a%0d%0a%0d%0aRESULTATS%0d%0a----------------------%0d%0aLe retrait theorique de la dalle en beton jeune est de "+ritirolastra+" mm.;%0d%0a" ;
 var oggetto="Calcul du retrait du plancher en béton jeune. Chantier de"  ;
 document.location.href = "mailto:?"+"Subject=" + oggetto + "&Body=" + mess; 
 }
