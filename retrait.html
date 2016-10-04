@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="css/stylevapo.css">
 
     <script language="javaScript" src="js/calcoli.js"></script>
-  <title>Calcul du retrait</title>
+  <title>Calcul du retrait des dalles en beton</title>
 
   </head>
   <body onload="init()">
@@ -20,7 +20,7 @@
    <div id="intro"> 
   <h1 class="titleindex">CALCUL DU RETRAIT DE LA DALLE EN BETON JEUNE</h1> <br>
   <p class="introtext"> 
-Le retrait théorique est calculée pour les premières 12-36 heures lorsque le plancher est très vulnérable<br />
+Le retrait théorique est calculée pour les premières 12-36 heures lorsque la dalle est très vulnérable<br />
 
 On considere le retrait calculé comme théorique parce que  certains variables sont pas connues (type de ciment, rapport agrégats/ciment ecc) et qu'on a présumé la situation climatique dans l'espoir qu’elle reste constante pendant au moins 36 heures. Cependant, l'application devient tres utile pour vérifier si la distance entre les joints est correcte et on peut agir en conséquence.<br />
 
@@ -54,7 +54,7 @@ Pour plus d'informations consultez  le texte explicatif sur la philosophie de ca
   
        <div class="ins">
        <div class="titoloins">
-      <label for="rck"> Resistance du beton N/mm<sup>2</sup> </label>
+      <label for="rck"> Resistance cubique du beton N/cm<sup>2</sup> </label>
        </div>
        <div class="inputins"> 
         <input type=number name="rck" id="rck" autofocus>
@@ -98,8 +98,8 @@ Pour plus d'informations consultez  le texte explicatif sur la philosophie de ca
        </div>
        <div class="inputins"> 
         <select id="tipogetto">
-        <option value="diretto"> coulage direct </option>
-        <option value="pompa"> coulage avec pompe </option>
+        <option value="direct"> coulage direct </option>
+        <option value="avec pompe"> coulage avec pompe </option>
         </select> 
        </div>
        </div>
@@ -109,7 +109,7 @@ Pour plus d'informations consultez  le texte explicatif sur la philosophie de ca
        </div>
         <table>
          <tr>
-       <td><input type="radio" name="barriera" id="barriera" value="si" ></td><td>SI</td>
+       <td><input type="radio" name="barriera" id="barriera" value="si" ></td><td>OUI</td>
        <td><input type="radio" name="barriera" id="barrierano" value="no" checked></td><td>NO </td></tr>
    
           </table>
@@ -154,8 +154,8 @@ Les joints de contraction seront donc dimensionnées en fonction de la contraint
 responsable des inexactitudes</p>
 </div>
 <div id="scelta2">
- <button class="bottoner" id="ripeti" onclick="ripeti()" style="text-align:center">Ripeti</button>
- <button class="bottonev" id='inviamail' onclick="inviamail()" style="text-align:center;">Invia</button>
+ <button class="bottoner" id="ripeti" onclick="ripeti()" style="text-align:center">Repeter</button>
+ <button class="bottonev" id='inviamail' onclick="inviamail()" style="text-align:center;">Transmettre</button>
 </div>
 
  </div>
